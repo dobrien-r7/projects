@@ -1,0 +1,33 @@
+json
+{
+    cyclename: "",
+    cyclestates: {1,2,3},
+    currentstate: {1}
+}
+
+
+
+python?
+
+for each cyclename:
+    show currentstate.
+
+    change state?
+        - cyclename. increase
+        -cyclename.decrease
+
+
++ time functionality
+
+
+but lets start suuuper simple
+
+
+-------------------
+
+cycle 1 : currentstate
+
+-   (+)
+
+cycle 1 : next state
+-------------------

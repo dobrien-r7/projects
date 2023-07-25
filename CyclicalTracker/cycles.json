@@ -1,0 +1,12 @@
+{
+    "Cycles": {
+        "cycleName":"Cycle", 
+        "cycleStates":[1,2,3], 
+        "currentState":1
+    },
+    {
+        "cycleName":"Cycle2", 
+        "cycleStates":[2,4,6], 
+        "currentState":4
+    }
+}

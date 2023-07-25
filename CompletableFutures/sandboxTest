@@ -1,0 +1,32 @@
+public static void main(String[] args)  {
+   System.out.println("Starting application...");
+
+   boolean futureCompletedSuccessfully = CompletableFuture.runAsync(() -> {
+      try {
+         unregisterFromEA(true);
+      }
+      catch (Exception e) {
+         e.printStackTrace();
+      }
+   }).completeExceptionally(new Exception("completeExceptionally"));
+
+
+   if (futureCompletedSuccessfully) {
+      System.out.println("Completed without an exception. Notify user");
+   }
+
+
+   Sleeper.sleep(2); // gives application time to run
+   System.out.println("Ending application...");
+}
+
+
+private static void unregisterFromEA(boolean throwException) throws Exception {
+
+   System.out.println("Unregistering from Exposure Analytics");
+
+
+   if (throwException) {
+      throw new Exception("Something bad happened");
+   }
+}
