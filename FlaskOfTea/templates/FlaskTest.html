@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing Flask</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/notion.css') }}">
+</head>
+<body>
+    <h1>
+        I'm Testing Flask With A DIY API.
+    </h1>
+    <p>
+        Lets go :)
+    </p>
+    <form action="" method="POST">
+        <p> Try getskeleton style below:</p>
+        <button name="foo" value="goSkelly">
+            Press Me
+        </button>
+    </form>
+
+    <li><a href="{{ url_for('skelly') }}">Go To Skelly</a></li>
+</body>
+</html>
