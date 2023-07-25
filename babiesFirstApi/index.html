@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cat Walk</title>
+    <style>
+      img {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div  style="display:block; min-height:250px;">
+        <img
+        src="http://www.anniemation.com/clip_art/images/cat-walk.gif"
+        alt="Cat walking"
+        />
+    </div>
+    <div style="display:block;">
+        <h1>something from an api below:</h1>
+        <p id="apiResponse"></p>
+        <button type="submit" onclick="getApiResponse()" onfocus="getAPI2()">Get the thing!</button>
+    </div>
+
+  </body>
+  <script>
+    //function getApiResponse() {
+    const getApiResponse = async () => {
+
+        const response = await fetch('https://random-d.uk/api/v2/random', {
+            method: 'GET',
+            headers: {
+            'Content-Type': 'application/json'
+            }
+        });
+        const myJson = await response.json();
+
+        document.getElementById(apiResponse).append({myJson});
+    }
+
+    function getAPI2() {
+        req = new XMLHttpRequest();
+        req.open("GET", "https://random-d.uk/api/v2/random", true)
+        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        req.send();
+
+       // document.getElementById(apiResponse).innerHTML = req.responseText;
+
+    }
+
+    req.onreadystatechange = function(){
+  if(req.readyState == 4 && req.status == 200){
+      document.getElementById("apiResponse").innerHTML = req.responseText;
+  }
+}
+
+  </script>
+  <script src="index.js"></script>
+</html> 
